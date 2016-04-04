@@ -122,6 +122,7 @@ Roulette.prototype = {
         this.gameState = GameState.OPENING;
         this.view = new RouletteView();
         this.view.create(this.messageBus);
+        this.messageBus.publish('maximizeGame');
         this.gameState = GameState.OPEN;
     },
 
@@ -129,6 +130,7 @@ Roulette.prototype = {
 
         this.gameState = GameState.RESTORING;
         this.view.show();
+        this.messageBus.publish('maximizeGame');
         this.gameState = GameState.OPEN;
     },
 
@@ -138,6 +140,7 @@ Roulette.prototype = {
         this.view.hide();
         this.view.destroy();
         this.view = null;
+        this.messageBus.publish('closeGame');
         this.gameState = GameState.CLOSED;
     },
 
@@ -145,6 +148,7 @@ Roulette.prototype = {
 
         this.gameState = GameState.MINIMIZING;
         this.view.hide();
+        this.messageBus.publish('minimizeGame');
         this.gameState = GameState.MINIMIZED;
     },
 
