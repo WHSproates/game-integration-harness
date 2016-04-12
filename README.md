@@ -126,6 +126,7 @@ The following topics should be published by Game and subscribed by Sportsbook.
 
 `gameShowDeposit` - Game will publish this topic in order to trigger the quick deposit dialog. No payload.
 
+`gameGetDeviceInfo` - Game will publish this topic in order to request device info from Sportsbook. No payload. See topic `deviceInfo`.
 
 Game will subscribe to the following topics which will be published by Sportsbook:
 
@@ -134,3 +135,15 @@ Game will subscribe to the following topics which will be published by Sportsboo
 `minimizeGame` – Published when Game needs to minimize. This would get the game to change modes so that it can work in the minimal mode. No payload.
 
 `closeGame` - Published when Game needs to close. No payload.
+
+`deviceInfo` - Published in response to `gameGetDeviceInfo`. Contains information about the platform. Inside the Sportsbook App (iOS), `native` will be true and `web` will be false. See below for description.
+
+```javascript
+{
+  "native": false, // true in Sportsbook App (iOS), false everywhere else (desktop, mobile safari...)
+  "web": true,     // false in Sportsbook App (iOS), true everywhere else
+  "desktop": true, // true only on desktop browsers
+  "mobile": false, // true only on mobile devices
+  "tablet": false  // true only on table devices
+}
+```

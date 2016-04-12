@@ -152,6 +152,19 @@ Roulette.prototype = {
         this.gameState = GameState.MINIMIZED;
     },
 
+    deviceAction: function deviceAction () {
+
+        // In the real version this will use actual device info
+
+        this.messageBus.publish('deviceInfo', {
+            native: false,
+            web: true,
+            desktop: true,
+            mobile: false,
+            tablet: false
+        });
+    },
+
     listen: function listen (messageBus) {
 
         var self = this;
@@ -180,6 +193,11 @@ Roulette.prototype = {
         messageBus.subscribe('gameShowDeposit', function () {
 
             console.log('Received topic gameShowDeposit');
+        });
+
+        messageBus.subscribe('gameGetDeviceInfo', function () {
+
+            self.deviceAction();
         });
 
         messageBus.subscribe('roulette.close', function () {
