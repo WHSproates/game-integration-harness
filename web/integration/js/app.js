@@ -177,6 +177,11 @@ Roulette.prototype = {
             console.log('Received topic gameBalanceError');
         });
 
+        messageBus.subscribe('gameShowDeposit', function () {
+
+            console.log('Received topic gameShowDeposit');
+        });
+
         messageBus.subscribe('roulette.close', function () {
 
             self.closeAction();

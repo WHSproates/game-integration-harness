@@ -124,6 +124,9 @@ The following topics should be published by Game and subscribed by Sportsbook.
 }
 ```
 
+`gameShowDeposit` - Game will publish this topic in order to trigger the quick deposit dialog. No payload.
+
+
 Game will subscribe to the following topics which will be published by Sportsbook:
 
 `maximizeGame` – Published when game needs to maximize. This would get the game to change modes back to the fullscreen game. No payload.
