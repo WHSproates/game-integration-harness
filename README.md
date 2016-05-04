@@ -136,7 +136,7 @@ Game will subscribe to the following topics which will be published by Sportsboo
     "game": "roulette", // to identify which game should launch
     "url": "https://gaming.williamhill-pp2.com/launch/vegas2/roulettemobile"
 }
-```javascript
+```
 
 `maximizeGame` – Published when game needs to maximize. This would get the game to change modes back to the fullscreen game. No payload.
 
