@@ -19,6 +19,9 @@ var RouletteView = function RouletteView () {
 RouletteView.prototype = {
 
     template: '<div id="roulette-overlay">' +
+              '  <div id="roulette-frame-wrapper">' +
+              '    <iframe id="roulette-iframe" src="https://gaming.williamhill-pp2.com/launch/vegas2/roulettemobile"></iframe>' +
+              '  </div>' +
               '  <div class="roulette-controls">' +
               '    <div class="roulette-control">' +
               '      <button id="roulette-minimize">-</button>' +
@@ -26,9 +29,6 @@ RouletteView.prototype = {
               '    <div class="roulette-control">' +
               '      <button id="roulette-close">x</button>' +
               '    </div>' +
-              '  </div>' +
-              '  <div id="roulette-frame-wrapper">' +
-              '    <iframe id="roulette-iframe" src="https://gaming.williamhill-pp2.com/launch/vegas2/roulettemobile"></iframe>' +
               '  </div>' +
               '</div>',
 
