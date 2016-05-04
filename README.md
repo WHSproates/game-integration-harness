@@ -130,6 +130,14 @@ The following topics should be published by Game and subscribed by Sportsbook.
 
 Game will subscribe to the following topics which will be published by Sportsbook:
 
+`launchGame` - Published when Game needs to launch. Because multiple integrations/games may be listening to this topic, the short name of the game will be passed. The launch URL of the game will also be passed.
+```javascript
+{
+    "game": "roulette", // to identify which game should launch
+    "url": "https://gaming.williamhill-pp2.com/launch/vegas2/roulettemobile"
+}
+```javascript
+
 `maximizeGame` – Published when game needs to maximize. This would get the game to change modes back to the fullscreen game. No payload.
 
 `minimizeGame` – Published when Game needs to minimize. This would get the game to change modes so that it can work in the minimal mode. No payload.
