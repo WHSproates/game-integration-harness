@@ -27,6 +27,9 @@ RouletteView.prototype = {
               '      <button id="roulette-close">x</button>' +
               '    </div>' +
               '  </div>' +
+              '  <div id="roulette-frame-wrapper">' +
+              '    <iframe id="roulette-iframe" src="https://gaming.williamhill-pp2.com/launch/vegas2/roulettemobile"></iframe>' +
+              '  </div>' +
               '</div>',
 
     create: function create (messageBus) {
@@ -50,7 +53,7 @@ RouletteView.prototype = {
 
         this.element.find('#roulette-close').on('click', function () {
 
-            self.messageBus.publish('roulette.close');
+            self.messageBus.publish('roulette.minimize');
         });
 
         this.element.find('#roulette-minimize').on('click', function () {
