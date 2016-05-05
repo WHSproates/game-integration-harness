@@ -20,7 +20,8 @@ RouletteView.prototype = {
 
     template: '<div id="roulette-overlay">' +
               '  <div id="roulette-frame-wrapper">' +
-              '    <iframe id="roulette-iframe" src="https://gaming.williamhill-pp2.com/launch/vegas2/roulettemobile"></iframe>' +
+              '    <iframe id="roulette-iframe" sandbox="allow-scripts allow-same-origin allow-forms" ' +
+              '            src="https://gaming.williamhill-pp2.com/launch/vegas2/roulettemobile"></iframe>' +
               '  </div>' +
               '  <div class="roulette-controls">' +
               '    <div class="roulette-control">' +
