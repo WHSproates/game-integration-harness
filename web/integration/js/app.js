@@ -28,7 +28,7 @@ RouletteView.prototype = {
               '      <button id="roulette-minimize">-</button>' +
               '    </div>' +
               '    <div class="roulette-control">' +
-              '      <button id="roulette-close">x</button>' +
+              '      <button id="roulette-close" class="btn btn--transparent -float-right gaming-icon icon-x"></button>' +
               '    </div>' +
               '  </div>' +
               '</div>',

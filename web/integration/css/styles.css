@@ -26,9 +26,9 @@
 
     position: fixed;
     border: 0;
-    top: 10px;
+    top: 0px;
     color: white;
-    background-color: black;
+    background-color: transparent;
     font-size: 24px;
 }
 
@@ -40,7 +40,8 @@
 
 #roulette-close {
 
-    right: 10px;
+    right: 0px;
+    padding-top: 10px;
 }
 
 
