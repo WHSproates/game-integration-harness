@@ -5,9 +5,7 @@ var GameState = Object.freeze({
     RESTORING: 2,
     OPEN: 3,
     MINIMIZING: 4,
-    MINIMIZED: 5,
-    CLOSING: 6,
-    CLOSED: 7
+    MINIMIZED: 5
 });
 
 var RouletteView = function RouletteView () {
@@ -24,12 +22,7 @@ RouletteView.prototype = {
               '            src="https://gaming.williamhill-pp2.com/launch/vegas2/roulettemobile"></iframe>' +
               '  </div>' +
               '  <div class="roulette-controls">' +
-              '    <div class="roulette-control">' +
-              '      <button id="roulette-minimize">-</button>' +
-              '    </div>' +
-              '    <div class="roulette-control">' +
-              '      <button id="roulette-close" class="btn btn--transparent -float-right gaming-icon icon-x"></button>' +
-              '    </div>' +
+              '    <button id="roulette-minimize" class="btn btn--transparent -float-right gaming-icon icon-x"></button>' +
               '  </div>' +
               '</div>',
 
@@ -51,11 +44,6 @@ RouletteView.prototype = {
     bind: function () {
 
         var self = this;
-
-        this.element.find('#roulette-close').on('click', function () {
-
-            self.messageBus.publish('roulette.minimize');
-        });
 
         this.element.find('#roulette-minimize').on('click', function () {
 
@@ -111,7 +99,7 @@ Roulette.prototype = {
 
             console.log('Game is already restoring');
 
-        } else if (this.gameState === GameState.DEFAULT || this.gameState === GameState.CLOSED) {
+        } else if (this.gameState === GameState.DEFAULT) {
 
             this.openAction();
 
@@ -136,16 +124,6 @@ Roulette.prototype = {
         this.view.show();
         this.messageBus.publish('maximizeGame');
         this.gameState = GameState.OPEN;
-    },
-
-    closeAction: function closeAction () {
-
-        this.gameState = GameState.CLOSING;
-        this.view.hide();
-        this.view.destroy();
-        this.view = null;
-        this.messageBus.publish('closeGame');
-        this.gameState = GameState.CLOSED;
     },
 
     minimizeAction: function minimizeAction () {
@@ -202,11 +180,6 @@ Roulette.prototype = {
         messageBus.subscribe('gameGetDeviceInfo', function () {
 
             self.deviceAction();
-        });
-
-        messageBus.subscribe('roulette.close', function () {
-
-            self.closeAction();
         });
 
         messageBus.subscribe('roulette.minimize', function () {

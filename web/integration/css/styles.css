@@ -18,32 +18,22 @@
 #roulette-overlay .roulette-controls {
 
     width: 100%;
-    height: 50px;
-    background-color: #184b74;
+    height: 3em;
+    background-color: #transparent;
+    position: fixed;
+    top: 0;
 }
 
 #roulette-overlay .roulette-control button {
 
-    position: fixed;
-    border: 0;
-    top: 0px;
-    color: white;
     background-color: transparent;
-    font-size: 24px;
 }
 
 #roulette-minimize {
 
-    right: 40px;
-    display: none;
+    margin-right: 1em;
+    margin-top: 0.3em;
 }
-
-#roulette-close {
-
-    right: 0px;
-    padding-top: 10px;
-}
-
 
 #roulette-frame-wrapper {
     width: 100%;
