@@ -126,6 +126,8 @@ The following topics should be published by Game and subscribed by Sportsbook.
 
 `gameShowDeposit` - Game will publish this topic in order to trigger the quick deposit dialog. No payload.
 
+`gameShowWithdraw` - Game will publish this topic in order to trigger the withdrawal dialog. No payload.
+
 `gameGetDeviceInfo` - Game will publish this topic in order to request device info from Sportsbook. No payload. See topic `deviceInfo`.
 
 Game will subscribe to the following topics which will be published by Sportsbook:

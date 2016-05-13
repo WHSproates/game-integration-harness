@@ -177,6 +177,11 @@ Roulette.prototype = {
             console.log('Received topic gameShowDeposit');
         });
 
+        messageBus.subscribe('gameShowWithdraw', function () {
+
+            console.log('Received topic gameShowWithdraw');
+        });
+
         messageBus.subscribe('gameGetDeviceInfo', function () {
 
             self.deviceAction();
